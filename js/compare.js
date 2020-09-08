@@ -4,33 +4,12 @@ function twoNumbers() {
   let result = confirm("Я могу сравнить 2 числа. Продолжим?");
 
   while (result) {
-    while (true) {
-      var num1 = Number (prompt("Введите первое число:"));
-      if (num1 == "") {
-        alert("Вы ничего не ввели");
-      } else if (isNaN (num1)) {
-        alert("числа вводим цифрами )");
-      } else {
-        break;
-      }
-    }
-
-    while (true) {
-      var num2 = Number (prompt("Введите второе число:"));
-      if (num2 == "") {
-        alert("Вы ничего не ввели");
-      } else if (isNaN (num2)) {
-        alert("числа вводим цифрами )");
-      } else {
-        break;
-      }
-    }
-      console.log(num1);
-      console.log(Number (num1));
-      console.log(isNaN (num1));
-    if (+num1 > +num2) {
+    var num1 = getNum ('первое');  
+    var num2 = getNum ('второе'); 
+    
+    if (num1 > num2) {
       alert("Первое число больше второго.");
-    } else if (+num1 < +num2) {
+    } else if (num1 < num2) {
       alert("Второе число больше первого");
     } else {
       alert("Числа равны");
@@ -38,7 +17,23 @@ function twoNumbers() {
 
     result = confirm("Повторим?");
     console.log(result);
-
-    // var result = confirm("Повторим?");
   }
+}
+
+//Запрашивает, обрабатывает, возвращает только число или повторяет запрос. serialNumber - порядковый номер числа
+function getNum (serialNumber){
+  while (true) {
+    var num =  prompt("Введите " + serialNumber + " число:");
+    console.log(num);
+    console.log(num === "");
+    console.log(num == "");
+    if (num === "") {
+      alert("Вы ничего не ввели");
+    } else if (isNaN (Number (num))) {
+      alert("числа вводим цифрами )");
+    } else {
+      break;
+    }
+  }
+  return +num;
 }
