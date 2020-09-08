@@ -6,17 +6,17 @@ function sum_num() {
     let sum = 0;
     
     while (true) {
-      var term = prompt('Введите число');
-      if (term === null){
+      var numFromUser = prompt('Введите число');
+      if (numFromUser === null){
         alert('Сумма: ' + sum)
         break;
       }
 
-      else if (!+term){
-        term = 0;
+      else if (!+numFromUser){
+        numFromUser = 0;
       }
       else {
-        sum += +term;
+        sum += +numFromUser;
       }
     }
 

@@ -24,9 +24,6 @@ function twoNumbers() {
 function getNum (serialNumber){
   while (true) {
     var num =  prompt("Введите " + serialNumber + " число:");
-    console.log(num);
-    console.log(num === "");
-    console.log(num == "");
     if (num === "") {
       alert("Вы ничего не ввели");
     } else if (isNaN (Number (num))) {
